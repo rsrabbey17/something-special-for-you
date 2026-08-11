@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, My Love! 💖</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+    <source src="birthday.mp3.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- ====== LOADER SCREEN ====== -->
+    <div id="loaderScreen" class="screen active">
+        <div class="loader-container">
+            <div class="spinner-ring"></div>
+            <div class="loader-number" id="loaderNumber">3</div>
+        </div>
+        <h2 class="loader-text">✨ Crafting your special moment... ✨</h2>
+    </div>
+
+    <!-- ====== INTRO SCREEN ====== -->
+    <div id="introScreen" class="screen">
+        <div class="content">
+            <img src="https://media.tenor.com/0ENB5HuTH0gAAAAi/toyou.gif" alt="Birthday GIF" class="intro-gif" />
+            <h1 class="gradient-text main-title">
+                A Cutiepie was born today, <br />21 years ago! 💕
+            </h1>
+            <p class="sub-text">Yes, it's YOU! A little surprise awaits...</p>
+            <button class="btn-gradient" onclick="startSurprise()">
+                      🎁 Start the Surprise
+           </button>
+        </div>
+    </div>
+
+    <!-- ====== CAKE SCREEN ====== -->
+    <div id="cakeScreen" class="screen">
+        <div class="content">
+            <div class="cake-container" id="cakeContainer">
+                <!-- Cake HTML will be rendered by JS -->
+            </div>
+
+            <!-- Happy Birthday Text (shows after candle is lit) -->
+            <div id="birthdayMessage" class="birthday-message hidden">
+                🎉 Happy Birthday, Cutiepie! 🎉
+            </div>
+
+            <div class="button-area">
+                <button id="candleBtn" class="btn-gradient" onclick="lightCandle()">
+                    🕯️ Light the Candle
+                </button>
+                <button id="nextBtn" class="btn-gradient hidden" onclick="goToScreen('photosScreen')">
+                    Next ➜
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== PHOTOS SCREEN ====== -->
+    <div id="photosScreen" class="screen">
+        <div class="content">
+            <h2 class="gradient-text section-title">💗 Some Sweet Moments 💗</h2>
+            <p class="hint-text">(Click the cards to flip)</p>
+
+            <div class="cards-wrapper">
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span>📸</span>
+                        </div>
+                        <div class="card-back">
+                            <img src="Jihad_1.JPG.jpeg" alt="Memory 1" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span>📸</span>
+                        </div>
+                        <div class="card-back">
+                            <img src="Jihad_2.JPG.jpeg" alt="Memory 2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span>📸</span>
+                        </div>
+                        <div class="card-back">
+                            <img src="Jihad_3.JPG.jpeg" alt="Memory 3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span>📸</span>
+                        </div>
+                        <div class="card-back">
+                            <img src="Jihad_4.JPG.jpeg" alt="Memory 4" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-gradient" onclick="goToScreen('messageScreen')">
+                💌 Open My Message
+            </button>
+        </div>
+    </div>
+
+    <!-- ====== MESSAGE SCREEN ====== -->
+    <div id="messageScreen" class="screen">
+        <div class="content">
+            <h2 class="gradient-text section-title">💕 A Special Message for You 💕</h2>
+
+            <div class="message-card">
+                <p class="message-text">
+                    Happy Birthday, Cutiepie! 🎂<br /><br />
+                    Taniii ♡ , তোমার জন্মদিনে তোমাকে শুভেচ্ছা জানানোর মানুষের অভাব হবে না। অনেকেই তোমার জন্য সুন্দর সুন্দর কথা বলবে, তোমার হাসি আর সুন্দর মুহূর্তগুলো উদযাপন করবে। কিন্তু আমি চাই, আমার এই ছোট্ট শুভেচ্ছাটা তোমার কাছে একটু আলাদা হয়ে থাকুক। কারণ, তুমি আমার কাছে কখনোই সাধারণ কেউ ছিলে না।
+
+তোমার জীবনের গল্পে হয়তো আমার কোনো অধ্যায় নেই, আমার অনুভূতিগুলোর কথাও হয়তো তুমি কখনো জানবে না। তবুও দূর থেকে তোমার ভালো থাকাটা চাওয়ার মধ্যে যে শান্তি আছে, সেটা আমি কখনো অস্বীকার করতে পারিনি।
+
+এই বিশেষ দিনে তোমার জন্য আমার একটাই দোয়া - তোমার মুখের এই সুন্দর হাসিটা যেন কখনো হারিয়ে না যায়। জীবনে যত কষ্টই আসুক, সুখ যেন সবসময় তোমার হাতটা শক্ত করে ধরে রাখে। তোমার স্বপ্নগুলো পূর্ণ হোক, আর প্রতিটা নতুন সকাল তোমার জন্য একটু বেশি সুন্দর কিছু নিয়ে আসুক।
+
+আর যদি কখনো কোনো এক নিরিবিলি রাতে মনটা খারাপ হয়ে যায়, যদি মনে হয় তোমাকে বুঝবার মতো কেউ নেই, তাহলে শুধু এটুকু মনে রেখো - দূরে কোথাও একজন মানুষ আছে, যে কোনো দাবি ছাড়াই, কোনো প্রত্যাশা ছাড়াই, নিঃশব্দে তোমার ভালো থাকাটা মন থেকে চায়।
+
+হয়তো তোমাকে পাওয়ার অধিকার আমার নেই,
+কিন্তু তোমার জন্য ভালো কিছু চাওয়ার ইচ্ছেটুকু তো আমার নিজের।
+
+শুভ জন্মদিন।
+তোমার জীবনটা তোমার জন্মদিনের মতোই সুন্দর হোক। আলোয় ভরা, হাসিতে ভরা, আর এমন কিছু মানুষে ভরা,যাদের উপস্থিতি তোমাকে প্রতিদিন মনে করিয়ে দেবে। 
+<br />তুমি সত্যিই আমার কাছে অনেকটাইই.. Special ♡</br>
+                    <span class="signature">Your Dearest One</span>
+                </p>
+            </div>
+
+            <button class="btn-gradient" onclick="celebrate()">
+                🎊 Celebrate!
+            </button>
+        </div>
+    </div>
+
+    <!-- ====== FINAL CELEBRATION SCREEN ====== -->
+    <div id="celebrationScreen" class="screen">
+        <div class="content celebration-content">
+            <h1 class="celebration-title">🎉 HAPPY BIRTHDAY! 🎉</h1>
+            <p class="celebration-sub">Wishing you the most beautiful day ever! 💖</p>
+            <div class="heart-rain" id="heartRain"></div>
+            <button class="btn-gradient" onclick="restart()">🔄 Start Over</button>
+        </div>
+    </div>
+
+    <!-- Watermark -->
+    <div class="watermark">Made with 💖 for you</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
