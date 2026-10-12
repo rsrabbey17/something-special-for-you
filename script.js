@@ -185,11 +185,32 @@ function restart() {
         clearInterval(confettiInterval);
         confettiInterval = null;
     }
+    
+    // Reset candle state
     candleLit = false;
+    
+    // Reset flame
+    const flame = document.getElementById('flame');
+    if (flame) flame.classList.remove('lit');
+    
+    // Reset buttons and message
     document.getElementById('candleBtn').classList.remove('hidden');
     document.getElementById('nextBtn').classList.add('hidden');
     document.getElementById('birthdayMessage').classList.add('hidden');
+    
+    // Clear heart rain
     document.getElementById('heartRain').innerHTML = '';
+    
+    // ✅ Reset flipped cards
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('flipped');
+    });
+    
+    // Optional: reset music
+    const music = document.getElementById('bgMusic');
+    music.pause();
+    music.currentTime = 0;
+    
     showScreen('introScreen');
 }
 
